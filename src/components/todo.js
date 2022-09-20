@@ -2,13 +2,13 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClipboardCheck, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
-const Todo = ({text, todo, setTodo}) => {
+// Functions
+const Todo = ({ text, todo, todos, setTodos }) => {
     const deleteHandler = () => {
-        // console.log(todo);
-        setTodo (todo.filter((el) => el.id !== todo.id));
+        setTodos(todos.filter((el) => el.id !== todo.id));
     };
     const completeHandler = () => {
-        setTodo (todo.map(item => {
+        setTodos(todos.map(item => {
             if (item.id === todo.id) {
                 return {
                     ...item, completed: !item.completed
